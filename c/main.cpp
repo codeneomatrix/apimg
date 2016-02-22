@@ -18,6 +18,21 @@ int main(){
 	
 	imprimir(sa,9);
 	
+	sa= grises(matrix);
+	
+	imprimir(sa,9);
+	
+	sa= umbral(matrix);
+	
+	imprimir(sa,9);
+	
+	sa= canny(matrix);
+	
+	imprimir(sa,9);
+	
+	sa= sobel(matrix);
+	
+	imprimir(sa,9);
 	
 	
     system("pause");

@@ -30,5 +30,30 @@ int* etiquetado(int x[] ){
 }
 
 
+int* grises(int x[] ){
+	printf("Algoritmo de escala de grises \n");
+	imprimir(x,9);
+	return matrix2;
+}
+
+int* umbral(int x[] ){
+	printf("Algoritmo de umbral\n");
+	imprimir(x,9);
+	return matrix2;
+}
+
+int* canny(int x[] ){
+	printf("Algoritmo de canny \n");
+	imprimir(x,9);
+	return matrix2;
+}
+
+int* sobel(int x[] ){
+	printf("Algoritmo de sobel \n");
+	imprimir(x,9);
+	return matrix2;
+}
+
+
 
 
