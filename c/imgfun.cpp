@@ -2,12 +2,16 @@
   program:1
   Name: etiquetado.cpp
   Author: josue acevedo maldonado,oribe abad silva
-  Date: 20/02/2016 
+  Date: 20/02/2016
   Description:
 */
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <vector>
+
+
+//#include <vector>
 //#include <math.h>
 
 int matrix2[9]= {1,0,0,
@@ -16,8 +20,8 @@ int matrix2[9]= {1,0,0,
 
 
 void imprimir(int m[],int l){
-	for(int i=0; i<=l; i++){
-		printf("%d ",m[i]);
+	for(int i=0; i<l; i++){
+		printf("%d",m[i]);
 	}
 	printf("\n");
 }
@@ -29,17 +33,31 @@ int* etiquetado(int x[] ){
 	return matrix2;
 }
 
-
-int* grises(int x[] ){
-	printf("Algoritmo de escala de grises \n");
-	imprimir(x,9);
-	return matrix2;
+	/**Algoritmo para convertir imagen COLOR a GRAY**/
+int* grises(int r[],int g[],int b[],int alto,int ancho){
+		printf("Algoritmo de Grises\n");
+		int* aux;//auxiliar que regresa la funcion
+		for (size_t i = 0; i < ancho*alto; i++) {
+			int val=(r[i]+g[i]+b[i])/3; //calculo del promedio de los canales RGB
+			aux[i]=val;//asignacion al vector de retorno del promedio
+		}
+	return aux; //regreso del auxiliar
 }
+/**Algoritmo para umbralado**/
+int * umbral(int x[],int umbral,int alto,int ancho){
+	printf("Algoritmo de Grises\n");
+	int* aux = (int*)malloc(ancho*alto*(sizeof(int)));//auxiliar que regresa la funcion
+	for (size_t i = 0; i < ancho*alto; i++) {
+		if(x[i]<=umbral){
+			aux[i]=0;
+		}
+		else{
+			aux[i]=255;
+		}
 
-int* umbral(int x[] ){
-	printf("Algoritmo de umbral\n");
-	imprimir(x,9);
-	return matrix2;
+	}
+return aux; //regreso del auxiliar
+
 }
 
 int* canny(int x[] ){
@@ -53,7 +71,3 @@ int* sobel(int x[] ){
 	imprimir(x,9);
 	return matrix2;
 }
-
-
-
-
