@@ -71,3 +71,44 @@ int* sobel(int x[] ){
 	imprimir(x,9);
 	return matrix2;
 }
+int * convolucion(int mascara[],int img[],int alto,int ancho){
+	int masc[3][3];
+	int ind=0;
+	for (size_t i = 0; i <3; i++) {
+		for (size_t j =0; j<3; j++) {
+			masc[i][j]=mascara[ind];
+			printf("%d",masc[i][j]);
+			ind++;
+		}
+		printf("\n");
+	}
+	int **matriz;
+
+matriz = (int **)malloc (alto*sizeof(int *));
+mataux =(int **)malloc (alto*sizeof(int *));
+for (int i=0;i<alto;i++){
+	matriz[i] = (int *) malloc (ancho*sizeof(int));
+	mataux[i] = (int *) malloc (ancho*sizeof(int));
+}
+	ind=0;
+	for (size_t i = 0; i < alto; i++) {
+		for (size_t j = 0; j < ancho; j++) {
+			matriz[i][j]=img[ind];
+			printf("%d",matriz[i][j]);
+			ind++;
+		}
+		printf("\n");
+	}
+for (size_t i = 1; i < alto; i++) {
+		for (size_t j = 1; j <ancho; j++) {
+			suma=(matriz[i-1][j-1]*masc[0][0])+(matriz[i-1][j]*masc[0][1])+
+			(matriz[i+1][j-1]*masc[0][2])+(matriz[i][j-1]*masc[1][0])+
+			(matriz[i][j+1]*masc[1][2])+(matriz[i+1][j-1]*masc[2][0])+
+			(matriz[i+1][j]*masc[2][1])+(matriz[i+1][j+1]*masc[2][2]);
+			mataux[i][j]=suma;
+		}
+}
+
+
+
+}

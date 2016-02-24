@@ -41,5 +41,7 @@ int main(){
 
 	imprimir(sa,9);
 
+	sa=convolucion(matrix,matrixr,3,3);
+
     return 0;
     }
