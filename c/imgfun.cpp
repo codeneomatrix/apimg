@@ -100,8 +100,8 @@ void convolucion(int salida[], int mascara[],int altom,int anchom,int img[],int 
 	printf("Algoritmo de convolucion \n");
 	reset(salida,alto);
 
- int centroh=ceil((double)(anchom/2))-1;
- int centrov=ceil((double)(altom/2))-1;
+ int centroh=floor((double)(anchom/2));
+ int centrov=floor((double)(altom/2));
 
 	int tem[altom*anchom];
 int mv=0;
