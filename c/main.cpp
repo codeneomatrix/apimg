@@ -7,13 +7,14 @@
 */
 #include "imgfun.cpp"
 #include <vector>
+#include <math.h>
 
 int sa[9];
 int matrixsalida[16];
 int kernel1[9]={1,2,3,
 				5,7,5,
 				2,2,9};
-				
+
 int matrix[16]= {10,5,3,7,
 				 2,4,0,1,
 				 4,6,2,3,
@@ -33,13 +34,13 @@ int main(){
 
 	//imprimir(sa,9);
 
-	grises(matrixsalida,matrix,matrixr,matrixd,4,4);
+	//grises(matrixsalida,matrix,matrixr,matrixd,4,4);
 
-	imprimir(matrixsalida,4,4);
+	//imprimir(matrixsalida,4,4);
 
-	umbral(matrixsalida,matrixr,5,4,4);
-
-	imprimir(matrixsalida,4,4);
+	//umbral(matrixsalida,matrixr,5,4,4);
+  //imprimir(matrixr,4,4);
+	//C
 
 	//sa= canny(matrix);
 
