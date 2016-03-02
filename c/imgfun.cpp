@@ -129,7 +129,6 @@ for(int k=0;k<n;k++){
 		//printf("\n r= %d \n",r);
 
 	}
-	//primer PARCHE
 	}
 
 	imprimir(salida,alto,ancho);
