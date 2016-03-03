@@ -51,6 +51,8 @@ int main(){
 	//imprimir(sa,9);
 
 	convolucion(matrixsalida,kernel1,3,3,matrixr,4,4);
+	sobelhorizontal(matrixsalida,matrixr,4,4);
+	sobelvertical(matrixsalida,matrixr,4,4);
 
     return 0;
     }
