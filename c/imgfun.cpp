@@ -63,7 +63,7 @@ void convolucion(int salida[], int mascara[],int altom,int anchom,int img[],int 
 	int tem[altom*anchom];
 int mv=0;
 int mh=0;
-int n=alto-2;
+int n=(alto-altom)+1;
 for(int k=0;k<n;k++){
 	mv=k;
 	for (int l = 0;l<n;l++) {
@@ -83,6 +83,9 @@ for(int k=0;k<n;k++){
 		//imprimir(mascara,altom,anchom);
 		//int r = producto_escalar(tem,mascara,(altom*anchom));
 		//printf("%d\n", centrov+mv);
+		//printf("centroh %d\n",centroh+mh);
+		//printf("centrov %d\n",centrov+mv);
+		//printf("salida[%d]\n",(centroh+mh)+((centrov+mv)*alto));
 		salida[(centroh+mh)+((centrov+mv)*alto)]=resultado;
 		//printf("\n r= %d \n",r);
 
@@ -150,4 +153,11 @@ void sobel(int salida[],int img[],int alto,int ancho){
 	int kernel[9]={2,2,0,2,0,-2,0,-2,-2};
 
 	convolucion(salida, kernel,3,3,img,alto,ancho);
+}
+
+void gauss(int salida[],int img[],int alto,int ancho){
+	printf("Algoritmo de gauss\n");
+	int kernel[25]={1,4,7,4,1,4,16,26,16,4,7,26,41,26,7,4,16,26,16,4,1,4,7,4,1};
+
+	convolucion(salida, kernel,5,5,img,alto,ancho);
 }

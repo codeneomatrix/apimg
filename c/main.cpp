@@ -10,16 +10,20 @@
 #include <math.h>
 
 int sa[9];
-int matrixsalida[16];
+int matrixsalida[36];
+int matrixsalida2[36];
 int kernel1[9]={1,2,3,
 				5,7,5,
 				2,2,9};
 
-int matrix[16]= {10,5,3,7,
-				 2,4,0,1,
-				 4,6,2,3,
-				 3,9,8,3};
-int matrixr[16]= {10,6,9,7,
+int matrixr[36]= {10,5,3,7,8,9,
+				 2,4,0,1,4,9,
+				 4,6,2,3,2,3,
+				 3,9,8,3,4,3,
+				 1,2,3,4,7,6,
+				 2,3,1,6,5,4};
+
+int matrixh[16]= {10,6,9,7,
 				  8,9,7,8,
 				  1,6,5,2,
 				  4,6,2,6};
@@ -50,10 +54,11 @@ int main(){
 
 	//imprimir(sa,9);
 
-	convolucion(matrixsalida,kernel1,3,3,matrixr,4,4);
-	sobelhorizontal(matrixsalida,matrixr,4,4);
-	sobelvertical(matrixsalida,matrixr,4,4);
-	sobel(matrixsalida,matrixr,4,4);
+	convolucion(matrixsalida,kernel1,3,3,matrixr,6,6);
+	sobelhorizontal(matrixsalida,matrixr,6,6);
+	sobelvertical(matrixsalida,matrixr,6,6);
+	sobel(matrixsalida,matrixr,6,6);
+	gauss(matrixsalida2,matrixr,6,6);
 
     return 0;
     }
