@@ -69,10 +69,11 @@ for(int k=0;k<n;k++){
 	for (int l = 0;l<n;l++) {
 		mh=l;
 		int con=0;
+		int resultado=0;
 		for(int i=(0+mv); i<(altom+mv); i++){
 			for(int j=(0+mh); j<(anchom+mh); j++){
 				//printf("tem[%d+(%d*%d)]=img[%d+(%d*%d)=%d ==> %d]\n",j,i,alto,j,i,alto,j+(i*alto),img[j+(i*alto)]);
-				tem[con]=img[j+(i*alto)];
+				resultado+= mascara[con]*img[j+(i*alto)];
 				con++;
 			}
 		}
@@ -80,9 +81,9 @@ for(int k=0;k<n;k++){
 		//printf("%d\n",(altom*anchom));
 		//imprimir(tem,altom,anchom);
 		//imprimir(mascara,altom,anchom);
-		int r = producto_escalar(tem,mascara,(altom*anchom));
+		//int r = producto_escalar(tem,mascara,(altom*anchom));
 		//printf("%d\n", centrov+mv);
-		salida[(centroh+mh)+((centrov+mv)*alto)]=r;
+		salida[(centroh+mh)+((centrov+mv)*alto)]=resultado;
 		//printf("\n r= %d \n",r);
 
 	}
