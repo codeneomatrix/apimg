@@ -103,7 +103,7 @@ void etiquetado(int s[],int x[] ){
 	/**Algoritmo para convertir imagen COLOR a GRAY**/
 void grises(int s[],int r[],int g[],int b[],int alto,int ancho){
 		printf("Algoritmo de Grises\n");
-		printf("\ntama�o: %d\n",sizeof(r));
+		//printf("\ntama�o: %d\n",sizeof(r));
 
 		for (size_t i = 0; i < ancho*alto; i++) {
 			int val=(r[i]+g[i]+b[i])/3; //calculo del promedio de los canales RGB
@@ -134,16 +134,20 @@ void canny(int salida[],int img[],int alto,int ancho){
 void sobelhorizontal(int salida[],int img[],int alto,int ancho){
 	printf("Algoritmo de sobelhorizontal \n");
 	int kernel[9]={1,2,1,0,0,0,-1,-2,-1};
-	
+
 	convolucion(salida, kernel,3,3,img,alto,ancho);
 }
 
 void sobelvertical(int salida[],int img[],int alto,int ancho){
 	printf("Algoritmo de sobelvertical \n");
 	int kernel[9]={1,0,-1,2,0,-2,1,0,-1};
-	
+
 	convolucion(salida, kernel,3,3,img,alto,ancho);
 }
 
+void sobel(int salida[],int img[],int alto,int ancho){
+	printf("Algoritmo de sobel\n");
+	int kernel[9]={2,2,0,2,0,-2,0,-2,-2};
 
-
+	convolucion(salida, kernel,3,3,img,alto,ancho);
+}
