@@ -64,9 +64,10 @@ void convolucion(int salida[], int mascara[],int altom,int anchom,int img[],int 
 int mv=0;
 int mh=0;
 int n=(alto-altom)+1;
+int m=(ancho-anchom)+1;
 for(int k=0;k<n;k++){
 	mv=k;
-	for (int l = 0;l<n;l++) {
+	for (int l = 0;l<m;l++) {
 		mh=l;
 		int con=0;
 		int resultado=0;
