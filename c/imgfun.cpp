@@ -8,9 +8,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <vector>
 #include <math.h>
-//#include <vector>
 
 int matrix2[9]= {1,0,0,
 				 0,2,0,

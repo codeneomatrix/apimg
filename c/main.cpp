@@ -6,7 +6,6 @@
   Description:
 */
 #include "imgfun.cpp"
-#include <vector>
 #include <math.h>
 
 int sa[9];
